@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <link href="index.css" rel="stylesheet">
+   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   
+    </head>
+    
+    <body>
+       <div class="container">
+          <div class="col-md-6 mx-auto text-center">
+             <div class="header-title">
+                <h1 class="wv-heading--title display-4">
+                   Covid 19: Come and Help Us — it’s your turn!
+                </h1>
+                <h2 class="wv-heading--subtitle">
+                   Self test and mask donation...
+                </h2>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-4 mx-auto">
+                <div class="myform form ">
+                   <span action="" method="post" name="login">
+                      <div class="form-group">
+                         <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                         <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" name="age"  class="form-control my-input" id="age" placeholder="Age">
+                     </div>
+                     <div class="form-group">
+                        <span>Gender</span>
+                        <select class="form-control my-input" id="country">
+                           <option value="male">Male</option>
+                           <option value="female">Female</option>
+                           <option value="other">Other</option>
+                        </select>                     
+                     </div>
+                     <div class="form-group">
+                        <span>Are you a smoker ?</span>
+                        <select class="form-control my-input" id="country">                           
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>                     
+                     </div>
+
+                     <div>
+                        <h3 > Do you have any of the following conditions ? </h3>
+                        <div class="spacer5"></div>
+
+                        <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="type2diabetes">
+                           <label class="custom-control-label" for="type2diabetes">Type 2 diabetes</label>
+                         </div>
+
+                         <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="type1diabetes">
+                           <label class="custom-control-label" for="type1diabetes">type 1 diabetes</label>
+                         </div>
+
+                         <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="hypertension">
+                           <label class="custom-control-label" for="hypertension">Hypertension</label>
+                         </div>
+
+                         <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="coronaryHeartDiseases">
+                           <label class="custom-control-label" for="coronaryHeartDiseases">Coronary Heart Diseases</label>
+                         </div>
+
+                         <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="copd">
+                           <label class="custom-control-label" for="copd">COPD (Chronic Obstructive Pulmonary Disorder)</label>
+                         </div>
+
+                         <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="cancer">
+                           <label class="custom-control-label" for="cancer">Cancer</label>
+                         </div> 
+
+                         <div class="custom-control custom-checkbox">
+                           <input type="checkbox" class="custom-control-input" id="chronicKidneydisease">
+                           <label class="custom-control-label" for="chronicKidneydisease">Chronic Kidney Disease</label>
+                         </div>
+                     </div>
+
+                     <div>
+                        <div class="spacer5"></div>
+                         <h3>Daily Self-Screening to support the medical profession</h3>  
+
+                        <div class="custom-control">
+                           <b> Have you been tested positive with Coronavirus ? </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="testedPositive" name="isTestedPositive">
+                              <label class="custom-control-label" for="testedPositive">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="testedNotPositive" name="isTestedPositive">
+                              <label class="custom-control-label" for="testedNotPositive">No</label>
+                            </div>          
+                        </div>
+                        
+                        <div class="custom-control">
+                           <b> Cough </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="dryCoughNone" name="dryCough">
+                              <label class="custom-control-label" for="dryCoughNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="dryCoughMild" name="dryCough">
+                              <label class="custom-control-label" for="dryCoughMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="dryCoughModerate" name="dryCough">
+                              <label class="custom-control-label" for="dryCoughModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="dryCoughSevere" name="dryCough">
+                              <label class="custom-control-label" for="dryCoughSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                                      
+                        <div class="custom-control">
+                           <b> Fever </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="feverNone" name="fever">
+                              <label class="custom-control-label" for="feverNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="feverMild" name="fever">
+                              <label class="custom-control-label" for="feverMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="feverModerate" name="fever">
+                              <label class="custom-control-label" for="feverModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="feverSevere" name="fever">
+                              <label class="custom-control-label" for="feverSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                        <div class="custom-control">
+                           <b> Sore Throat </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="soreThroatNone" name="soreThroat">
+                              <label class="custom-control-label" for="soreThroatNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="soreThroatMild" name="soreThroat">
+                              <label class="custom-control-label" for="soreThroatMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="soreThroatModerate" name="soreThroat">
+                              <label class="custom-control-label" for="soreThroatModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="soreThroatSevere" name="soreThroat">
+                              <label class="custom-control-label" for="soreThroatSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                        <div class="custom-control">
+                           <b> Fatigue </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="fatigueNone" name="fatigue">
+                              <label class="custom-control-label" for="fatigueNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="fatigueMild" name="fatigue">
+                              <label class="custom-control-label" for="fatigueMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="fatigueModerate" name="fatigue">
+                              <label class="custom-control-label" for="fatigueModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="fatigueSevere" name="fatigue">
+                              <label class="custom-control-label" for="fatiguerSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                        <div class="custom-control">
+                           <b> Shortness Of Breadth </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="shortBreadthNone" name="shortBreadth">
+                              <label class="custom-control-label" for="shortBreadthNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="shortBreadthMild" name="shortBreadth">
+                              <label class="custom-control-label" for="shortBreadthMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="shortBreadthModerate" name="shortBreadth">
+                              <label class="custom-control-label" for="shortBreadthModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="shortBreadthSevere" name="shortBreadth">
+                              <label class="custom-control-label" for="shortBreadthSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                        <div class="custom-control">
+                           <b> Loss Of Smell </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossSmellNone" name="lossSmell">
+                              <label class="custom-control-label" for="lossSmellNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossSmellMild" name="lossSmell">
+                              <label class="custom-control-label" for="lossSmellMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossSmellModerate" name="lossSmell">
+                              <label class="custom-control-label" for="lossSmellModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossSmellSevere" name="lossSmell">
+                              <label class="custom-control-label" for="lossSmellSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                        <div class="custom-control">
+                           <b> Loss Of Taste </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossTasteNone" name="lossTaste">
+                              <label class="custom-control-label" for="lossTasteNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossTasteMild" name="lossTaste">
+                              <label class="custom-control-label" for="lossTasteMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossTasteModerate" name="lossTaste">
+                              <label class="custom-control-label" for="lossTasteModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="lossTasteSevere" name="lossTaste">
+                              <label class="custom-control-label" for="lossTasteSevere">Severe</label>
+                            </div>                
+                        </div>
+
+                        <div class="custom-control">
+                           <b> Muscle Soreness </b>
+                           <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="muscleSoreNone" name="muscleSore">
+                              <label class="custom-control-label" for="muscleSoreNone">None</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="muscleSoreMild" name="muscleSore">
+                              <label class="custom-control-label" for="muscleSoreMild">Mild</label>
+                            </div> 
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="muscleSoreModerate" name="muscleSore">
+                              <label class="custom-control-label" for="muscleSoreModerate">Moderate</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="muscleSoreSevere" name="muscleSore">
+                              <label class="custom-control-label" for="muscleSoreSevere">Severe</label>
+                            </div>                
+                        </div>
+
+
+                     </div>
+
+                     <div>
+                        <div class="spacer5"></div>
+                        <h1>Thank you for supporting the MASK DONATION! </h1>  
+                        <div class="spacer5"></div>
+                    </div>
+
+                      <div class="text-center ">
+                         <button type="submit" class=" btn btn-block send-button tx-tfm">Submit Your health status</button>
+                      </div>
+                      <p class="small mt-3">By submitting, you are indicating that you have read and agree to the <a href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                      </p>
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </body>
+
+</html>

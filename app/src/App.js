@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DailySurvey from './components/pages/DailySurvey'
-import ConfirmationPage from './components/pages/ConfirmPage'
 import ThankYouPage from './components/pages/ThankYouPage'
 import RegistrationPage from './components/pages/RegistrationPage'
 import UserInfoSurvey from './components/pages/UserInfoSurvey'
@@ -16,7 +15,6 @@ export class App extends Component {
           <Route exact path="/" component={RegistrationPage} />
           <Route exact path="/register" component={RegistrationPage} />
           <Route exact path="/userinfo" component={UserInfoSurvey} />
-          <Route exact path="/confirmation" component={ConfirmationPage} />
           <Route exact path="/dailysurvey" component={DailySurvey} />
           <Route exact path="/thankyou" component={ThankYouPage} />
         </div>

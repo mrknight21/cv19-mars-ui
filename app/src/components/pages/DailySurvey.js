@@ -7,6 +7,7 @@ import {Redirect} from "react-router-dom";
 export class DailySurvey extends Component {
  //Define Survey JSON
  //Here is the simplest Survey with one text question
+
  json = {
   elements: [
     {
@@ -70,19 +71,21 @@ export class DailySurvey extends Component {
   ]
  };
 
- //Define a callback methods on survey complete
- onComplete(survey, options) {
-  //Write survey results into database
-  console.log("Survey results: " + JSON.stringify(survey.data));
-  return (
-    <Redirect
-      to={{
-        pathname: "/thankyou",
-        state: { },
-      }}
-    />
-  );
- }
+ 
+ constructor(props) {
+    super(props);
+    this.state = {isComplete: false };
+    this.onComplete = this.onComplete.bind(this)  
+  }
+
+  //Define a callback methods on survey complete
+  onComplete(survey, options) {
+    //Write survey results into database
+    console.log("Survey results: " + JSON.stringify(survey.data));
+    this.setState({
+      isComplete: true
+    })
+  }
 
  render() {
   //Create the model and pass it into react Survey component
@@ -90,12 +93,15 @@ export class DailySurvey extends Component {
   //The most model properties are reactive, on their change the component will change UI when needed.
   var model = new Survey.Model(this.json);
   return (
-  <dev>
+    this.state.isComplete ? <Redirect  to={{
+        pathname: "/thankyou"
+      }}/> :
+  <div>
     <p>Fill out the basket to help us Donate 200 Masks to the Hospital!</p>
     <br></br>
     <p>Daily Self-Assessment to support the medical profession!</p>
       <Survey.Survey model={model} onComplete={this.onComplete}/>
-  </dev>
+  </div>
   );
   /*
   //The alternative way. react Survey component will create survey model internally

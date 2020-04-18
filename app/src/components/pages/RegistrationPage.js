@@ -8,6 +8,12 @@ export class RegistrationPage extends Component {
  //Define Survey JSON
  //Here is the simplest Survey with one text question
 
+ constructor(props) {
+  super(props);
+  this.state = {isComplete: false };
+  this.onComplete = this.onComplete.bind(this)  
+}
+
  json = {
   elements: [
    { type: "text", name: "userName", title: "What is your name?", isRequired: true},
@@ -31,20 +37,21 @@ export class RegistrationPage extends Component {
  onComplete(survey, options) {
   //Write survey results into database
   console.log("Survey results: " + JSON.stringify(survey.data));
-  return (
-    <Redirect
-      to={{
-        pathname: "/userinfo"
-      }}
-    />
-  );
+  this.setState({
+    isComplete: true
+  })
  }
+
  render() {
   //Create the model and pass it into react Survey component
   //You may create survey model outside the render function and use it in your App or component
   //The most model properties are reactive, on their change the component will change UI when needed.
   var model = new Survey.Model(this.json);
-  return (<Survey.Survey model={model} onComplete={this.onComplete}/>);
+  model.showCompletedPage = false;
+  console.log(this.state.isComplete)
+  return (this.state.isComplete ? <Redirect  to={{
+    pathname: "/userinfo"
+  }}/> : <Survey.Survey model={model} onComplete={this.onComplete}/>);
   /*
   //The alternative way. react Survey component will create survey model internally
   return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);

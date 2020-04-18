@@ -77,18 +77,19 @@ export class UserInfoSurvey extends Component {
     ],
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {isComplete: false };
+    this.onComplete = this.onComplete.bind(this)  
+  }
+
   //Define a callback methods on survey complete
   onComplete(survey, options) {
     //Write survey results into database
     console.log("Survey results: " + JSON.stringify(survey.data));
-    return (
-      <Redirect
-        to={{
-          pathname: "/dailysurvey",
-          state: { },
-        }}
-      />
-    );
+    this.setState({
+      isComplete: true
+    })
   }
   render() {
     //Create the model and pass it into react Survey component
@@ -96,7 +97,10 @@ export class UserInfoSurvey extends Component {
     //The most model properties are reactive, on their change the component will change UI when needed.
 
     var model = new Survey.Model(this.json);
-    return <Survey.Survey model={model} onComplete={this.onComplete} />;
+    model.showCompletedPage = false;
+    return (this.state.isComplete ? <Redirect  to={{
+      pathname: "/dailysurvey"
+    }}/> : <Survey.Survey model={model} onComplete={this.onComplete}/>);
     /*
   //The alternative way. react Survey component will create survey model internally
   return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);

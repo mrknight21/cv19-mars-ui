@@ -2,7 +2,6 @@
 import * as Survey from "survey-react";
 import React, { Component } from 'react';
 import "survey-react/survey.css";
-import {Redirect} from "react-router-dom";
 
 export class DailySurvey extends Component {
  //Define Survey JSON
@@ -81,7 +80,8 @@ export class DailySurvey extends Component {
   //Define a callback methods on survey complete
   onComplete(survey, options) {
     //Write survey results into database
-    console.log("Survey results: " + JSON.stringify(survey.data));
+    console.log("Survey results: " + survey.css);
+    // console.log(survey.completedHtml)
     this.setState({
       isComplete: true
     })
@@ -91,17 +91,17 @@ export class DailySurvey extends Component {
   //Create the model and pass it into react Survey component
   //You may create survey model outside the render function and use it in your App or component
   //The most model properties are reactive, on their change the component will change UI when needed.
-  var model = new Survey.Model(this.json);
+  let user_progress = 3
+//   let number_of_completd = 359
+  let model = new Survey.Model(this.json);
+  model.title = "You have Fill out {0}/5 surveys, continue the effort to help us Donate 200 Masks to the Hospital!".format(user_progress);
+  model.description = "Daily Self-Assessment to support the medical profession!";
+  model.logoPosition = 'top';
+  model.logo = "/images/mango/mango-0{0}.gif".format(user_progress);
+  model.navigateToUrl = "/thankyou"
+
   return (
-    this.state.isComplete ? <Redirect  to={{
-        pathname: "/thankyou"
-      }}/> :
-  <div>
-    <p>Fill out the basket to help us Donate 200 Masks to the Hospital!</p>
-    <br></br>
-    <p>Daily Self-Assessment to support the medical profession!</p>
       <Survey.Survey model={model} onComplete={this.onComplete}/>
-  </div>
   );
   /*
   //The alternative way. react Survey component will create survey model internally

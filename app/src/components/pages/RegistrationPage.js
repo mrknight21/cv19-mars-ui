@@ -2,7 +2,7 @@
 import * as Survey from "survey-react";
 import React, { Component } from 'react';
 import "survey-react/survey.css";
-import {Redirect} from "react-router-dom";
+// import {Redirect} from "react-router-dom";
 
 export class RegistrationPage extends Component {
  //Define Survey JSON
@@ -48,10 +48,19 @@ export class RegistrationPage extends Component {
   //The most model properties are reactive, on their change the component will change UI when needed.
   var model = new Survey.Model(this.json);
   model.showCompletedPage = false;
+  model.title = "Join us, protect ourselves while doing something good. Human let’s go!"
+  model.description = "Donate a token each time when you submit this self-assessment. Let’s find out your risk level for COVID-19 (Coronavirus)"
+  model.navigateToUrl = "/userinfo"
+  model.completeText = "Next step!"
   console.log(this.state.isComplete)
-  return (this.state.isComplete ? <Redirect  to={{
-    pathname: "/userinfo"
-  }}/> : <Survey.Survey model={model} onComplete={this.onComplete}/>);
+  return (
+  <div>
+    <div >
+    <img src={"/images/test.png"} alt="test" class="center"/>
+    </div>
+  <Survey.Survey model={model} onComplete={this.onComplete} />
+  </div>
+  );
   /*
   //The alternative way. react Survey component will create survey model internally
   return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);

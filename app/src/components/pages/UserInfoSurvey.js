@@ -2,7 +2,6 @@
 import * as Survey from "survey-react";
 import React, { Component } from "react";
 import "survey-react/survey.css";
-import {Redirect} from "react-router-dom";
 
 export class UserInfoSurvey extends Component {
   //Define Survey JSON
@@ -98,9 +97,12 @@ export class UserInfoSurvey extends Component {
 
     var model = new Survey.Model(this.json);
     model.showCompletedPage = false;
-    return (this.state.isComplete ? <Redirect  to={{
-      pathname: "/dailysurvey"
-    }}/> : <Survey.Survey model={model} onComplete={this.onComplete}/>);
+    model.navigateToUrl = "/dailysurvey"
+    model.title = "Fill out the basket to help us Donate 200 Masks to the Hospital"
+    model.logo = "/images/mango/mango-01.gif"
+    model.logoPosition = 'top';
+    model.completeText = "Now start filling today's survey!"
+    return (<Survey.Survey model={model} onComplete={this.onComplete}/>);
     /*
   //The alternative way. react Survey component will create survey model internally
   return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);

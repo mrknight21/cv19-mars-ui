@@ -8,7 +8,7 @@ export class ThankYouPage extends Component {
   render() {
     return (
       <div style={{ backgroundColor: "#FFCC80" }}>
-        <div style={{ fontFamily: "Lobster", fontSize: "36px" }}>Fill out the basket to help us Donate 200 Masks to the Hospital</div>
+        <div style={{ fontFamily: "Segoe UI", fontSize: "36px" }}><b>Fill out the basket to help us Donate 200 Masks to the Hospital</b></div>
       </div>
     );
   }
